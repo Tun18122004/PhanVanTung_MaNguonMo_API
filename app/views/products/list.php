@@ -4,18 +4,21 @@
 <ul class="list-group">
 <?php foreach ($products as $product): ?>
 <li class="list-group-item">
-<h2> <a href="/webbanhang/Product/show/<?php echo $product->id; ?>" >
-<?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>
-</a>
-</h2>
+<h2><a href="/webbanhang/Product/show/<?php echo $product->id; ?>"><?php
+echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?></a></h2>
+<?php if ($product->image): ?>
+<img src="/webbanhang/<?php echo $product->image; ?>" alt="Product
+Image" style="max-width: 100px;">
+<?php endif; ?>
 <p><?php echo htmlspecialchars($product->description, ENT_QUOTES, 'UTF8'); ?></p>
 <p>Giá: <?php echo htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8');
-?></p>
- <p><strong>Danh mục:</strong> <?php echo htmlspecialchars($product->category_name, ENT_QUOTES, 'UTF-8'); ?></p>
+?> VND</p>
+<p>Danh mục: <?php echo htmlspecialchars($product->category_name,
+ENT_QUOTES, 'UTF-8'); ?></p>
 <a href="/webbanhang/Product/edit/<?php echo $product->id; ?>" class="btn
 btn-warning">Sửa</a>
 <a href="/webbanhang/Product/delete/<?php echo $product->id; ?>"
-class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩmnày?');">Xóa</a>
+class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">Xóa</a>
 </li>
 <?php endforeach; ?>
 </ul>

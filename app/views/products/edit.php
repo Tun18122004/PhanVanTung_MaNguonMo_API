@@ -9,8 +9,8 @@
 </ul>
 </div>
 <?php endif; ?>
-<form method="POST" action="/webbanhang/Product/update" onsubmit="return
-validateForm();">
+<form method="POST" action="/webbanhang/Product/update" enctype="multipart/form-data"
+onsubmit="return validateForm();">
 <input type="hidden" name="id" value="<?php echo $product->id; ?>">
 <div class="form-group">
 <label for="name">Tên sản phẩm:</label>
@@ -32,7 +32,7 @@ required>
 <div class="form-group">
 <label for="category_id">Danh mục:</label>
 <select id="category_id" name="category_id" class="form-control" required>
-    <?php foreach ($categories as $category): ?>
+<?php foreach ($categories as $category): ?>
 <option value="<?php echo $category->id; ?>" <?php echo $category->id
 == $product->category_id ? 'selected' : ''; ?>>
 <?php echo htmlspecialchars($category->name, ENT_QUOTES, 'UTF-8');
@@ -40,6 +40,15 @@ required>
 </option>
 <?php endforeach; ?>
 </select>
+</div>
+<div class="form-group">
+<label for="image">Hình ảnh:</label>
+<input type="file" id="image" name="image" class="form-control">
+<input type="hidden" name="existing_image" value="<?php echo $product->image;
+?>">
+<?php if ($product->image): ?>
+<img src="/<?php echo $product->image; ?>" alt="Product Image" style="maxwidth: 100px;">
+<?php endif; ?>
 </div>
 <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
 </form>
