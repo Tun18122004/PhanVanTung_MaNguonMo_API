@@ -201,6 +201,8 @@
             <div class="tech-actions">
                 <a href="/webbanhang/Product/edit/<?php echo $product->id; ?>" class="btn btn-warning-tech">Sửa</a>
                 <a href="/webbanhang/Product/delete/<?php echo $product->id; ?>" class="btn btn-danger-tech" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">Xóa</a>
+                <a href="/webbanhang/Product/addToCart/<?php echo $product->id; ?>"
+class="btn btn-primary">Thêm vào giỏ hàng</a>
             </div>
             
         </li>
