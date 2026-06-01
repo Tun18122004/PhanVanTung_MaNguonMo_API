@@ -14,7 +14,7 @@ class AccountController {
     public function index() {
     // Giả sử Model của bạn có hàm bổ sung để lấy tất cả tài khoản
     // $query = "SELECT * FROM account";
-    $query = "SELECT username, name, role FROM account";
+    $query = "SELECT username, name, role FROM account WHERE role like 'user'";
     $stmt = $this->db->prepare($query);
     $stmt->execute();
     $accounts = $stmt->fetchAll(PDO::FETCH_OBJ);
