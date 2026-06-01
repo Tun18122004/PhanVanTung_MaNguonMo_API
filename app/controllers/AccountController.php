@@ -95,10 +95,18 @@ class AccountController {
                     exit;
                 }
                 else {
-                    echo "Password incorrect.";
+                    echo "<script>
+                    alert('Mật khẩu không chính xác. Vui lòng kiểm tra lại mật khẩu!');
+                    window.location.href = '/webbanhang/account/login'; // Chuyển hướng người dùng quay lại trang đăng nhập
+                </script>";
+                exit();
                 }
             } else {
-                echo "Bao loi khong tim thay tai khoan";
+                echo "<script>
+                    alert('Tài khoản này không tồn tại trong hệ thống. Vui lòng kiểm tra lại!');
+                    window.location.href = '/webbanhang/account/login'; // Chuyển hướng người dùng quay lại trang đăng nhập
+                </script>";
+                exit();
             }
         }
     }
