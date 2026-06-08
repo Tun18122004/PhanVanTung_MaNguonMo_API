@@ -145,6 +145,9 @@ if (!empty($cart)) {
                     <li class="nav-item">
                         <a class="nav-link" href="/webbanhang/Product/">Danh sách sản phẩm</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/webbanhang/Category/">Danh sách danh mục</a>
+                    </li>
                     <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/webbanhang/account/">Quản lý tài khoản</a>
